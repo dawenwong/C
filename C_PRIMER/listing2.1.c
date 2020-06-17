@@ -61,3 +61,63 @@ information that goes at the top  of a file a header,and C implementations typic
 may define constant or indicate the names of functions and how they should be used.But the actual code for a function
 is in a library file of precompiled code,not in a header file.The linker component of the compiler takes care of finding 
 the library code you need.In short,header files help guide the compiler in putting your program together correctly.*/
+/*Declarations*/
+/*int num;*/
+/*This line from the program is termed declaration statement.The declaration statement is one of C's most important features
+.This particular example declares two things.First,somewhere in the functions,you have a variable called num.Second,the int 
+proclaims num as integer---that is,a number without a decimal point or fractional part.(int is an example of a data type)
+The complier uses this information to arrange for suitable storage space in memory for the num variable.The semicolon is part 
+of the statement.*/
+/*The word int is a C Keyword indentifying one of the basic C data types.Keywords are the words used to express a language,
+and you can't use them for other purposes.For instance,you can't use int as the name of a function or a variable.
+In C,all variables must be declared before they are used.This means that you have to provide a lists of all the variables
+you use in program and that you have to show which data type each variable is.*/
+/*Traditionally,C has required that variables be declared at the beginning of a block with no other kind of statement allowed 
+to come before any of the declarations.that is,the body of main() might look like the following:*/
+int main()     //traditional rules
+{
+    int doors;
+    int dogs;
+    doors = 5;
+    dogs = 3;
+    //other statements
+}
+/*C99 and C11 ,following the practice of C++,let you place declarations about anywhere in a block.However,you still must 
+declare a variable before its first use.So if your compiler supports this feature,your code can look like the following*/
+int main() //current C rules 
+{
+    //some statements
+    int doors;
+    doors = 5;   //first use of doors 
+    //more statements 
+    int dogs;
+    dogs = 3;   //first use of dogs 
+    //other statements
+}
+/*Assignment*/
+/*num = 1;*/
+/*The next program line is an assignment statement,one of the basic operations in C.This particular example means"assign 
+ the value 1 to the variable num";line set aside space in computer memory for the variable num,and assignment line stores 
+ a value in that location.You can assign num a different value later.Note that the assignment statement assigns a value
+ from the right side to the left side. */
+/*The printf() function*/
+/*The first printf()funcions line is an example of how you call or invoke a functions in C.You need type only the name of 
+the function,placing the desired argument(s) within the parentheses.When the program reaches this line,control is truned over to 
+the named function(printf() in this case).When the function is finished with whatever it does,control is returned to the 
+original(the calling ) function ---main(),in this example*/
+/*Placeholder*/
+/*The digit 1 was substituted for the symbol group %d when the line was printed,and 1 was the value of the variable num.
+The %d is a placeholder to show where the value of num is to be printed.The C version does a little more than this,actually
+.The % alerts the program that a veriable is to be printed at that location,and the d tells it to print the variable as 
+a decimal(base 10) integer.The printf()function allows several choices for the format of printed variables,include 
+hexadeciaml(base 16) integers and numbers with decimal ponits.*/
+
+/*RETURN STATEMENT*/
+/*return 0;*/
+/*this return statement is the final statement of the program.The int in int main(void) means that the main() function
+is supposed to return an integer.The C standard requires that main() behave that way.C functions that return values do so 
+with a return statement,which consists of the keyword return,followed by the returned value,followed by a semicolon.If 
+you leave out the return statement for main(),the program will return 0 when it reached the closing }.So you can omit the 
+return statement at the end of main().However,you can't omit if from other functions,so it's more consistent to use it in main(),too
+At this point,you can regard the return statement in main() as something required for logical consistency,but it has a practical
+use with some operating systems.*/
