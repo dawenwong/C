@@ -121,3 +121,17 @@ you leave out the return statement for main(),the program will return 0 when it 
 return statement at the end of main().However,you can't omit if from other functions,so it's more consistent to use it in main(),too
 At this point,you can regard the return statement in main() as something required for logical consistency,but it has a practical
 use with some operating systems.*/
+/*Making programs readable*/
+/*Choose meaningful variable names and use comments
+Another technique involves using blank lines to separate one conceptual section of a function from another
+A fourth technique is to use one line per statement.*/
+
+int main(void){int four;four
+=
+4
+;
+printf(
+    "%d\n",
+four
+);return 0;}  //This is legitimate,but ugly.
+
