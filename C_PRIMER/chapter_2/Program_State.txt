@@ -1,0 +1,18 @@
+Program State
+By tracing the program step-by-step manually,keeping track of each variable,you monitor the program state.
+The program state is simply the set of values of all the variables at the given point in program execution.
+It is a snapshort of the current state of computation.
+
+We just discussed one method to tracing the state:executing the program step-by-step yourself.In a program 
+that makes,say,10,000 iterations,you might not feel up to that task.Still,you can go through a few iterations 
+to see whether your program does what you intend.However,there is always the possibility that you will execute 
+the steps as you intended them to be executed instead of as you actually wrote them,so try to be faithful to the 
+actul code.
+
+Another approach to locating semantic problems is to sprinkle extra prinf() statement throughout to monitor the value
+of the selected variables at key points in the program. See how the values change can illuminate what's happening.
+After you have the program working to your satisfaction,you can remove the extra statement and recompile.
+
+A third method for examining the program states is to use a debugger.A debugger is a program that enables you to run
+another pragram step-by-step and examine the value of that program's variables.Debuggers come in various levels of 
+case of use and sophistication.The more advanced debuggers show which line of source code is being executed. 
