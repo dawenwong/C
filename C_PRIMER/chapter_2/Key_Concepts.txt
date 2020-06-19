@@ -1,0 +1,14 @@
+KEY CONCEPTS
+Computer programming is a challenging activity.It demands abstract,conceptual thinking combined with careful attention
+to detail.You'll find that compilers enforce the attention to detail.When you talk to a friend,you might use a few 
+words incorrectly,make a grammatical error or two,perhaps leave some sentences unfinished,yet your friend will still 
+understand what you are trying to say.But a compiler doesn't make such allowances;to it,almost right is still wrong.
+
+You can think of a program as a description you prepare of how you want the computer to behave.The compiler handles
+the really detailed job of converting your description to the underlying machine language.(As a measure of how much
+work a compiler does,it can create an executable file of 60KB from your source code file of 1KB;a lot of machine language
+goes into representing even a simple C program.) Because the compiler has no real intelligence,you have to  express 
+your description in the compiler's terms,and these terms are the formal rules set up by the C language standard.
+
+The compiler expects to receive its instructions in a specific format.Your job as a programmer is to express your ideas
+about how a program should behave within the framework that the compiler-- guided by the C standard --can process successfully.
