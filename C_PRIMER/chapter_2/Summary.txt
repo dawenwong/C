@@ -1,0 +1,18 @@
+Summary 
+A C program consist of one or more functions.Every C program must contain a function called main() because it is the 
+function called when the program started up.A simple function consists of a function header followed by an opening 
+brace,followed by the statements consistuting the function body,followed by a terminating,or closing,brace.
+
+Each C statement is an instruction to the computer and is marked by a terminating semicolon.A declaration statement 
+creates a name for a variable and indentifies the type of the data to be stored in the variable.The name of a variable
+is an example of an indentifier.An assignment statement assigns a value to a variable or,more generally,to storage area.
+A function call statement causes the named function to be executed.When the called function is done,the program returns
+to the next statement after the function call.
+
+The printf()function can be used to print phrases and the values of variable.
+The syntax of a language is the set of rules that governs the way in which valid statements in that language are 
+put together.The semantics of a statement is its meaning.The compiler help you detect syntax error,but semantic errors 
+show up in a program's behavior only after it is compiled.Detecting semantic error may involve tracing the program state-
+that is,the values of all variables--after each program step.
+
+Finally,keywords are the vocabulary of the C language.
