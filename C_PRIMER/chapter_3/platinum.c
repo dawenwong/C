@@ -43,4 +43,21 @@ int main(void)
     it on a new person.The scanf() and printf() functions make this interactivity possible. The scanf() funcrion reads data
     from the keyboard and delivers that data to your screen.Together,these two functions enable you to establish a 
     two-way communication with your computer,and that makes using a computer much more fun.*/
-    
+//Data Variables and Constants
+/*A computer,under the guidance of a program,can do many things.It can add numbers,It can add numbers,sort names,command
+the obedience of a speaker or video screen,calculate cometary orbits,prepare a mailing list,dial phone numbers,draw 
+stick figures,draw conclusions,or anything else your imagination can create.To do these tasks,the program needs to 
+work with data,the numbers and characters that bear the information you use.Some types of data are preset before a 
+program is used and keep their values unchanged throughout the life of the program.These are constants.Other types of 
+data may change or be assigned values as the program runs;these are variables.In the sample program,weight is a variable
+and 14.5833 is a constant.What about 1700.0?True,the price of platinum isn't a constant in real life,but in this program
+treats it as a constant.The difference between a variable and constant is that a variable can have its value assigned 
+or changed while the program is running,and a constant can't.*/
+
+//Data:Data-Type Keywords
+/*Beyond the distinction between variable and constant is the distinction between differet types of data.Some types of 
+data are numbers.Some are letters or,more generally,characters.The computer needs a way to identify and use these differents 
+kinds.C does this by recongnizing several fundamental data types.If a datum is a constant,the compiler can usually 
+tell its type just by the way it looks:42 is an integer,and 42.00 is floating points.A variable,however,needs to have
+its type announced in a declaration statement.*/ 
+
