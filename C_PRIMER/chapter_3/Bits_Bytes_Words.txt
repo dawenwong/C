@@ -1,0 +1,14 @@
+Bits Bytes and Words
+The terms bit,byte,and word can be used to describle units of computer data or to describle units of computer
+memory.We'll concentrate on the second usage here.
+The smallest unit of memory is call a bit.It can hold one or two values :0 or 1.(Or you can say that the bit is 
+set "off" or "on".)You can't store much information in one bit,but a computer has a tremendous stock of them.The 
+bit is the basic building block of computer memory.
+The byte is the usual unit of computer memory.For nearly all machines,a byte is 8 bits,and that is the standard 
+definition,at least when used to measure storage.Because each bit can be either 0 or 1,there are 256 possible bit
+patterns of 0s and 1s that can fit in an 8-bit byte. These patterns can be used,for example,to represent the integers
+from 0 to 255 or represent a set of characters.Representation can be accomplished with binary code,which uses just 0s
+and 1s to represent numbers.
+A word is the natural unit of memory for a given computer desgin.For 8-bit microcomputers,such as the original Apple,
+a word is just 8 bits.Since then,personal computer moved up to 16-bit words,32-bit words,and,at the present,64-bit words
+.Larger word sizes enable faster transfer of data and allow more memory to be accessed.
