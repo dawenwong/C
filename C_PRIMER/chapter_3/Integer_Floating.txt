@@ -1,0 +1,38 @@
+Integer Versus Floating-Point Types
+Integer types?Floating_Points types?If you find these terms disturbingly unfamiliar,relax.We are about to give you 
+a brief rundown of their meannings.If you are unfamiliar with bits,bytes and words,you might want to read the nearby
+sidebar about them first.Do you have to learn all the details?Not really,not any more than you have to learn the principles
+of internal combustion engines to drive a car,but knowing a little about what goes on inside of a  computer or engine
+can help you occasionally.
+
+For a human,the difference between integers and floating-piont numbers is reflected in the way they can be written.For 
+a computer,the difference is reflected in the way they are stored.
+The Integer:
+An integer is a number with no fractional part.In C,an integer is never written with a decimal point.Example are 2,23
+-23,and 2456.Numbers such as 3.14,0.22,and 2.000 are not integers.Integers are stored as binary numbers.The integer 7,
+for example,is written 111 in binary.Therefore,to store this number in an 8-bit byte,just set the first 5 bits to 0
+and the last 3 bits to 1.(0000 0111)
+
+The Floating-Point Number
+A floating-piont number more or less corresponds to what mathematicians call a real number.Real numbers include the 
+numbers between the integers.Some floating-point numbers are 2.75,3.16E7,7.00,and 2e-8.Notice that adding a decimal 
+point makes a value a floating-point value.So 7 is an integer type but 7.0 is a floating-point type.Obviously,there is 
+more than one way to write a floating-point number.
+
+The key point here is that the scheme used to store a floating-point number is different from the one used to store 
+an integer.Floating-point representation involves breaking up a number into a fractional part and an exponent part 
+and storing the  parts separately.Therefore,the 7.0 in this list would not be stored in the same manner as the integer
+7,even though both have the same value.The decimal analogy would be to write 7.0 as 0.7E1.Here,0.7 is the fractional 
+part,and the 1 is the exponent part.A computer,of course,would use binary numbers and powers of 2 instead of powers 
+of 10 for internal storage.
+    An integer has no fractional part;a floating-point number can have a fractional part.
+    Floating-point numbers can be reprsentation a much larger range of values than integers can.
+    For some arithmetic operations,such as subtracting one large number from another,Floating-Points numbers are 
+    subject to greater loss of precision.
+    Because there is an infinite number of real numbers in any range--for example,in the range between 1.0 and 2.0
+    computer floating-point numbers can't represent all the values in the range.Instead,floating-point values are often
+    approximations of a true value.For example,7.0 might be stored as 6.999999 float value--more about precision later.
+    Floating-points operations were once much slower than integer operation.However,today much CPUs incorporate floating
+    -point processors that close the gap.
+
+
