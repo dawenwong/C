@@ -1,0 +1,7 @@
+Octal and Hexadeciaml 
+Normally,C assumes that integer constants are decimal,or base 10,numbers.However,Octal(base 8) and Hexadecimal
+(base 16) numbers are popular with many programmers.Because 8 and 16 are powers of 2,and 10 is not,these number 
+systems occasionally offer a more convenient way for expressing computer-related values.For example,the number 65536
+,which often pops up in 16-bit machines,is just 10000 in hexadecimal.Also,each digit in a hexadecimal number  corresponds
+to exactly 4bit.For example,the hexadecimal digit 3 is 0011 and the hexadecimal value 53 is 0101 0011.This correspondence
+makes it easy to go back and forth between hexadecimal and binary (base 2) notation.
