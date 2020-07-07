@@ -15,3 +15,10 @@ int main(void)
 
     return 0;
 }
+/*For the first line of output,the first %d represents the int variable ten,the second %d represents the int constant2
+,and the third %d represents the value of the int expression ten - two.The second time,however,the program used ten 
+to provide a value for the first %d and used whatever values happened to be lying around in memory for the next two.
+You might be annoyed that the compiler doesn't catch such an obvious error.Blame the unusual design of printf().Most
+functions take a specific number of arguments,and the compiler can check to see whether you've used the current number.
+However,printf() can have one,two,three,or more arguments,and that keeps the compiler from using its usual methods for 
+errot checking. */
