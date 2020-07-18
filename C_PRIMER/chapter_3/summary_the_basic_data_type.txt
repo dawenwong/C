@@ -1,0 +1,51 @@
+Keyword:
+    The basic data types are set up using 11 Keyword:int ,long ,short ,unsigned ,char , float ,double ,
+signed ,_Bool ,_Complex ,and _Imaginary.
+
+Signed Integers:
+These can have positive and negative values:
+    int--The basic type for a given system.C guarantees at least 16 bits for int.
+    short or short int -- The largest short integer is no larger than the largest int and may be smaller.
+    C guarantees at least 16 bits for it.
+    long or long int -- Can hold an integer at least as large as the largest int and possible larger.C 
+    gurantees at least 32 bits for it.
+    long long or long long int -- This type can hold an integer as least as large as the largest long and 
+    possible larger.The long long type is least 64 bits.
+Typically,long will be bigger than short,and int will be the same as one of the two.For example,old Dos-based
+systems for the PC provided 16 bits short and int and 32 bits long.
+
+Unsigned Integers:
+These have zero or positive values only.This extends the range of the largest possible number.Use the Keyword
+unsigned before the desired type:unsigned int,unsigned long,unsigned short.A lone unsigned is the same as 
+unsigned int.
+
+Character:
+These are typographic symbols such as A,& adn +.By definition,the char type use 1 byte of memory to represnet
+a character.Historically,this character byte has most often been 8 bits,but it can be 16 bits or larger.,if
+needed to represent the base character set.
+    char -- The Keyword for this type.Some implementations use a signed char,but others use an unsigned char.
+C enables you to use the Keywords signed and unsigned to specify which form you want.
+
+Boolean:
+Boolean values represent true or false;C use 1 for true and 0 for false.
+    _Bool--The keyword for this type.It is an unsigned int and need only be large enough to accommodate the 
+    range 0 through 1.
+
+Real Floatng Point:
+These can have positive or negatibe values:
+    float--The basic floating-point type for the system;it can represent at least six significant figures 
+    accurately. 
+    double -- A (possibly) larger unit for holding floating-point numbers.It may allow more significant figures
+    (at least 10,typically more) and perhaps larger exponents than float.
+    long double --A (possily) even larger unit for holding floating-point numbers.It may allow more significant
+    figures and perhaps larger exponents than double.
+
+Complex and Imaginary Floating Point:
+The imaginary types are optional .The real and imaginary components are based on corresponding real type:
+    floating _Complex
+    double _Complex
+    long double _Complex
+    float _Imaginary
+    double _Imaginary
+    long double _Imaginary
+    
