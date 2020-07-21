@@ -48,4 +48,64 @@ The imaginary types are optional .The real and imaginary components are based on
     float _Imaginary
     double _Imaginary
     long double _Imaginary
-    
+
+Summary:How to Declare a Simple Variable?
+1.Choose the type you need.
+2.Choose a name for the variable using the allowed characters.
+3.Using the following foramt for a declaration statement:
+    type-specificer variable-name;
+
+    The type-specificer is formed from one or more of the type keywords;here are example of declarations:
+    int erest;
+    unsigned short cash;
+4.You can declare more than one variable of the same type by separating the variable names with commas,here's
+an example:
+    char ch,init,ans;
+5.You can initialize a variable in a declaration statement:
+    float mass = 6.0E23;
+
+TYPE SIZES
+What type sizes does your system use?check out the typesize.c program.
+C has a built-in operator called sizeof that gives sizes in bytes.C99 and C11 provide a %zd specificer for
+this type used by sizeof.
+// The output:
+    Type int has a size of 4 bytes.
+    Type char has a size of 1 bytes.
+    Type long has a size of 4 bytes.
+    Type long long has a size of 8 bytes.
+    Type double has a size of 8 bytes.
+    Type long double has a size of 16 bytes.
+This program found the size of only six types,but you can easily modify it to find the size of any other that 
+interests you.Note that the size of char is necessarily 1 byte because C defines the size of 1 byte in terms of 
+char.
+
+Using data types
+When you develop a program,note the variables you need and which type they should be.Most likely,you can use
+int or possible float for the numbers and char for the characters.Declare them at the beginning of the functon
+that uses them.Choose a name for the variable that suggests its meaning.When you initialize a varibale,match 
+the constant type to the variable type.
+    int apples = 3;   /* RIGHT   */
+    int oranges 3.0;  /* POOR FORM */
+C is more forgiving about type mismatches than,say,Pascal.C compilers allow the second initialization,but 
+they might complain,particularly if you have activated a higher warning level.It is best not to develop 
+sloppy habits.
+
+When you initialize a variable of one numeric type to a value of a different type.C converts the value to match 
+the variable.This means you may lose some data.
+    int cost = 12.99;  /* initializing  an int to a double  */
+    float pi = 3.1415926536; /* initializing a float to a double */
+
+The first declaration assigns 12 to cost;when converting float-point values to integers,C simply throws 
+away the decimal part(truncation) instead of rounding.The second declaration loses some precision,because 
+a float is guranteed to represent only first six digits accurately.Compliers may issue a warning(but's don't 
+have it) if you make such initializations.
+
+Many programmers and organizations have systematic conventions for assigning variable names in which the indicates
+the type of variable.For example,you could use an i_ prefix to indicate type int and us_ prefix to indicate
+unsigned short ,so i_smart would be instantly recognizable as a type int variable and us_verysmart would be 
+an unsigned short variable.
+
+
+
+
+

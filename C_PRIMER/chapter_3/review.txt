@@ -1,0 +1,35 @@
+2.Why would you use a type long variable instead of type int?
+One reason is that long may accommodate larger numbers than int on your system;another resaon is that if you 
+do need to handle larger values,you improve portability by using a type guaranteed to be at least 32 bits on
+all systems.
+3.What portable types might you use to get a 32-bit signed integer,and what would the rationale be for each 
+choice?
+To get exactly 32 bits,you could use int32_t,provided it was defined for your system.
+To get the smallest type that could store at least 32 bits,use int_least32_t.
+And to get the type that would provide the fastest computations for 32 bits,choose int_fast32_t.
+
+4.Identify the type and meaning,if any,of each of the following constants:
+    a. '\b'  => char constant(but store as type int)
+    b. 1066  => int constant
+    c. 99.44 => double constant
+    d. 0xAA  => unsigned int constant,hexadecimal format
+    e. 2.0e30 =>double constant
+6.Identify the data type (as used in declaration statements)and the printf() format specifier for each 
+of the following constants:
+    Constants                        Type                            Specifier
+    a. 12                            int                                %d
+    b. 0x3                           unsigned int                       %#x
+    c. 'C'                           char                               %c
+    d. 2.3E07                        double                             %e
+    e. '\040'                        char                               %c
+    f. 7.0                           double                             %f
+    g. 6L                            long int                           %ld
+    h. 6.0f                          float                              %f
+    i. 0x5.b6p12                     double                             %a 
+11.Identify what each of the following escape sequences represent:
+    a. \n       A newline character
+    b. \\       A backslash character
+    c. \"       A double quotation mark
+    d. \t       A tab character
+
+    
