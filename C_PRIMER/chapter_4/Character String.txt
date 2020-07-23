@@ -1,0 +1,30 @@
+A character string is a series of one or more characters.Here is an example of a string:
+    "Zing went the strings of my heart!"
+The double quotation marks are not part of string.They inform the compiler that they enclose a
+string,just as single quotation marks identify a character.
+
+Type char Arrays and the Null Character
+C has no special variable type for strings.Instead,strings are stored in an array of type char.
+Characters in a string are stored in adjacent memory cells,one character per cell,and an array 
+consists of adjacent memory locations,so placing a string in an array is quit natural.
+//each cell is one byte 
+//null character == \0
+
+Note that  Figure 4.1 shows the character \0 in the last array position.This is the null character
+,and C uses it to mark the end of a string.The null character is not the digit zero;it is the 
+nonprinting character whose ASCII code value is(or equivalent) 0.Strings in C are always stored with 
+this terminating null character.The presence of the null character means that the array must have 
+at least one more cell than the number of characters to be stored.So when the preceding program 
+said it had 40 bytes to store the string,that meant it could hold up to 39 characters in addition 
+to the null character.
+
+Now just what is an array?You can think of an array as several memory cells in a row.If you prefer
+more formal language,an array is an ordered sequence of data elements of one type.This example 
+creates an array of 40 memory cells,or elements,each of which can store one char-type value by using 
+this declaration:
+char name[40];
+The brackets after name identify it as an array.The 40 within  the bracket indicates the number
+of elements in the array.The char identifies the type of each elements.
+Using a character string is beginning to sound complicated!You have to create an array,place the
+characters of a string into an array,one by one ,and remember to add \0 at the end.Fortunately,the 
+computer can take care of most of the details itself.
