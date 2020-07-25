@@ -1,0 +1,30 @@
+
+The const modifier
+C90 added a second way to create symbolic constants--using the const keyword to convert a declaration
+for a variable into a declaration for a constant:
+    const int MONTHS = 12; // MONTHS a symbolic constant for 12
+
+This makes MONTHS into a  read-only value.That is,you can display MONTHS and use it in calculations
+,but you cannot alter the value of MONTHS.This newer approach is more flexible than using #define;
+it lets you declare a type,and it allows better control over which parts of a program can use the 
+constant.
+Acutally,C has yet a third way to create symbolic constants,and that is the enum facility disscussed 
+in chapter 14,"Structures and other Data Forms"
+
+
+
+Manifest Constants on the Job
+The C header files limits.h and float.h supply detailed information about the size limits of integer
+types and floating types,respectively.Each file defines a series of manifest constants that apply
+to your implementation.For instance,the limit.h file contains lines similar to the following :
+    #define INT_MAX +32767
+    #define INT_MIN -32768
+These constants represent the largest and smallest possible values for the int type.If your system
+uses a  32-bit int,the file would provide different values for these symbolic constants.The file
+defines minimum and maximum values for all the integer types.If you include the limit.h file,you 
+can use code such as following :
+    printf("Maximum int value on this system = %d\n",INT_MAX);
+
+If your system uses a 4-byte int,the limit.h file that comes with that system would provide definitions
+for INT_MAX and  INT_MIN that match the limits of a 4-byte int.
+
