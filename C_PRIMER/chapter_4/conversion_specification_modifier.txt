@@ -1,0 +1,84 @@
+Conversion specification modifiers for printf()
+You can modify a basic conversion specification by inserting modifiers between the % and the defining 
+conversion character.
+                The printf() Modifiers
+    Modifiers           Meaning
+    flag                The five flags(-,+space,#,and 0) are described in Table 4.5.Zero or more 
+                        flags may be present.
+                        Example:"%-10d".
+    digit(s)            The minimum field with width.A wider field will be used if the printed number
+                        or string won't fit in the field.
+                        Example:"%4d".
+    .digit(s)           Precision.For %e,%E,and %f conversions,the number of digits to be printed
+                        to the right of the decimal.For %g and %G conversions,the ,maximum number
+                        of significant digits.For %s conversions,the maximum number of characters 
+                        to be printed.For integer conversions,the minimum number of digits to appear
+                        ;leading zeros are used if necessary to meet this minimum.Using only . implies
+                        a following zero,so %.f is the same as %.0f. 
+                        Example:"%5.2f" prints a float in a field five characters wide with two digits 
+                        after the decimal point.
+        h               Used with an integer conversion specifier to indicate a short int or unsigned 
+                        short int value.
+                        Example:"%hu","%hx",and "%6.4hd".
+        j               Used with an integer conversion specifier to indicate an intmax_t or uintmax_t
+                        value;these are types defined in stdint.h.
+                        Example:"%jd" and "%8jX"
+        l               Used with an integer conversion specifier to indicate a long int  or unsigned 
+                        long int.
+                        Example:"%ld" and "%8lu"
+        ll              Used with an integer conversion specifier to indicate a long long int or unsigned 
+                        long long  int.
+                        Example:"%lld" and "%8lld".
+        L               Used with a floating-point conversion specifier to indicate a long double value.
+                        Example:"%Lf"  and "%10.4Le"
+        t               Used with an integer conversion specifier to indicate a ptrdiff_t value.This is 
+                        the type corresponding to the difference between two pointers.
+                        Example:"%td" and "%12ti"
+        z               Used with an integer conversion specifier to indicate a size_t value.This is 
+                        the type returned by sizeof.
+                        Example:"%zd"  and "%12zx". 
+
+Note Type Portability
+The sizeof operator,recall,returns the size,in bytes,of a type or value.This should be some form of 
+integer,but the standard only provides that it should be unsigned integer.Thus it could be unsigned
+int,unsigned long,or even unsigned long long.So,if you were to use printf() to display a sizeof 
+expression,you might use %u on one system,%lu one another,and %llu on a third.This means you would 
+need to research the correct usage for your system and you might need to alter your program if you 
+move it to a different system.Well,it would have meant that except that C provides help to make the 
+type more portable.First,the stddef.h header file(inculded when you inculde stdio.h) defines size_t
+to be whatever the type your system uses of sizeof;this is called the underlying type.Second,printf()
+uses the z modifier to indicate the corresponding type for printing.Similarly,C defines the ptrdiff_t
+type and t modifier to indicate whatever underlying signed integer type the system used for the 
+difference between two addresses.
+
+Note Conversion of float Arguments
+There are conversion specifier to print the floating types double and long double.However,there is 
+no specifier for float.The reason is that float values were automatically converted to type double 
+before being used in an expression or as an argument under K&P C.ANSI C(or later),in general,does
+not automatically convert float to double.To protect the enormous number of existing programs that 
+assume float arguments are converted to double,however,all float arguments to printf()--as well as
+to any C function not using an explicit prototype--are still automatically converted to double.Therefore
+under either K&R C or ANSI C,no special conversion specifier is needed for displaying type float.
+        The printf() flags
+    Flag                Meaning 
+    -                   The item is left-justified;that is,it is printed beginning at the left of the 
+                        field.
+                        Example:"%-20s".
+    +                   Signed values are displayed with a plus sign,if positive,and with a minus sign,
+                        if nagative.
+                        Example:"%+6.2f".
+    space               Signed values are displayed with a leading space (but no sign) if positive
+                        and with a minus sign if negative.A + flag overrides a spece.
+                        Example:"% 6.2f".
+    #                   Used an alternative form for the conversion specification.Produces an initial
+                        0 for the %o form and an initial 0x or 0X for the %x or %X form,respectively.
+                        For all floating-point forms,# guarantees that a decimal-point character is printed,
+                        even if no digit follow.For %g and %G form,it prevents trailing zeros from being removed.
+                        Example:"%#o","%#8.0f",and "%+#10.3E".
+    0                   For numeric forms,pad the field width with leading zeros instead of with spaces.
+                        The flag is ingnored if a-flag is present or if ,for an integer form,a precision is
+                        specified.
+                        Example:"%010d" and "%08.3f".
+
+
+                  
