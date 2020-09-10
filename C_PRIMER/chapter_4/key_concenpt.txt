@@ -51,4 +51,13 @@ specifier,can be used to read in single-word strings.
 
 The C preprocessor searched a source code program for preprocessor directives,which begin with the 
 # symbol,and acts upon them before the program is compiled.The # include directive causes the 
-processor to add the content 
+processor to add the contents of another file to your file at the location of the directive.The 
+#define directive lets you establish manifest constants --that is,symbolic representations for 
+constants.The limits.h and float.h header files use #define to define a set of constants representing
+various properties of integer and floating-point types.You also can use the const modifier to 
+create symbolic constants.
+
+The printf() and scanf() functions provide versatile support for input and output.Each uses a control
+string containing embedded conversion specifiers to indicate the number and type of data item to be 
+read or printed.Also you can use the conversion specifiers to control the appearance of the output:
+field widths,decimal places,and placement within a field.
