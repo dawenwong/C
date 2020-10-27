@@ -1,0 +1,87 @@
+Fundamental Operators
+C uses operators to reprsent arithmetic operations.For example,the + operator causes the two values
+flanking it to be added together.If the term operator seems odd to you,please keep in mind that 
+those things had to be called something."operator" does seem to be better choice than,say,"those things"
+or "arithmetical transactors".Now take a look at the operators used for basic arithmetic:=,+,-,*,//
+
+Assignment Operators: = 
+In C,the equal sign does not mean "equals".Rather,it is a value-assigning operator.The statement:
+    bmw = 2002;
+assigns the value 2002 to the variable named bmw.That is,the item to the left = sign is the name of 
+a variable,and the item on the right is the value assigned to the variable.The = symbol is called
+the assignment operator.Again,don't think of the line as saying,"bmw equals 2002."Instead,read it 
+as "assign the value 2002 to the variable bmw."The action goes from the right to left for this operator.
+
+Perhaps this distinction between the name of a variable and the value of a variable seems like 
+hair-splitting,but consider the following common type of computer statement:
+    i = i + 1;
+As mathemetics,this statement makes no sense.If you add 1 to a finite numbe,the result isn't "equal to"
+the number you started with,but as a computer assignment statement,it is perfectly reasonable.It means "
+Find the value of the variable named i,add 1 to that value,and then assign this new value to the 
+variable i."
+
+A statement such as:
+    2002 = bmw;
+makes no sense in C(and,indeed,is invalid) because 2002 is what C calls rvalue,in this case,just a 
+literal constant.You can't assign a value to a constant;it already is its value.When you sit down at the 
+keyboard,therefore,remember that the item to the left of the = sign must be the name of a variable.Actually,
+the left side must refer to a storage location.The simplest way is to use the name of variable,but ,as you 
+will see later,a "pointer" can be used to point to a location.More generally,C uses the term modifiable 
+lvalue to label those entities to which you can assign values."Modifiable lvalue" is not,perhaps,the most 
+intuitive phrase you've encountered,so let's look at some definitions.
+
+Some Terminology:Data Objects,Lvalues,Rvalues,and Operands.
+
+Consider an assignment statement.Its purpose is to store a value at a memory location.Data object is a general 
+term for a region of data storage that can be used to hold values.The C standard uses just the term object
+for this concept.One way to identify an object is by using the name of a variable.But,as you will eventually 
+learn,there are  other was to identify an object.For example,you could specify an element fo an array,a 
+member of a structure,or use a pointer expression that involves the address of the object.C uses the term
+lvalue to mean any such name or expression that identifies a particular data object.Object refers to the 
+actual data storage,but an lvalue is label used to identify,or locate,that storage.
+
+In the early days of C,saying something was an lvalue mean two things:
+    1. It specified an object,hence refered to an address in memory.
+    2. It could be used on the left side of an assignment operator,hence the "l" in lvalue.
+
+But then C added the const modifier.This allows  you to create an object,but one whose value canont be 
+changed.So a const identifier satisfies the first of the two properties above,but not the second.At this 
+point the standard continued to use the lvalue for any expression identifying an object,even though some 
+lvalues could not be used on the left side of an assignment operator.
+
+And C added the term modifiable lvalue to identify an object whose value can be changed.Therefore,the 
+left side of an assignment operator should be a modifiable lvalue.
+
+The current standard suggests that object locator value might be a better term.
+
+The term rvalue refers to quantities that can be assigned to modifiable lvalues but which are not themselves
+lvalues ,For instance,consider the following statement:
+    bmw = 2002;
+
+Here,bmw is a modifiable lvalue,and 2002 is an rvalue.As you probably guessed,the r in rvalue comes from 
+right.Rvalue can be constants,variables,any other expression that yields a value,such as a function call.
+Indeed,the current standard uses value of an expression instead of rvalue.
+
+Let's look at a short example:
+
+    int ex;
+    int why;
+    int zee;
+    const int TWO = 2;
+    why = 42;
+    zee = why;
+    ex = TWO*(why+zee);
+
+Here ex,why,and zeea all are modifiable lvalues(or object locator values).They can be used either on the left
+side or the right side of an assignment operator.TWO is a non-modifiable lvalue;it can only be used on the 
+right side.(In the context of initializing TWO to 2,the = operator represents initialization,not assignment,so
+the rule isn't violated)Meanwhile,42 is an rvalue;it doesn't refer to some specific memory location.Also,while
+why and zee are modifiable lvalves,the expression (why +zee)is an rvalue;it doesn't represent a specific memory
+location and you can't assign to it.It's just a temporary  value the program calculates,and then discards when 
+it's finished with it.
+
+As long as you are learning the names of things,the proper term for what we have called an "item" (as in 
+"the item to the left of the =") is operand.operands are what operators operate on.For example,you can 
+describe eating a hamburger as applying the "eat" operator to the "humburger" operand;similarly ,you can
+say that the left operand of the = operator shall be a modifiable lvalue.
+
